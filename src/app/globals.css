@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0f;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface2: rgba(255, 255, 255, 0.06);
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #64ffda;
+  --color-accent2: #7c3aed;
+  --color-accent3: #38bdf8;
+  --color-text: #ccd6f6;
+  --color-text-bright: #e6f1ff;
+  --color-muted: #8892b0;
+  --color-dark-muted: #495670;
+
+  --font-sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Selection */
+::selection {
+  background: rgba(100, 255, 218, 0.15);
+  color: var(--color-accent);
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Cursor glow */
+.cursor-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.07), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.15s ease;
+  transform: translate(-50%, -50%);
+}
+
+/* Left nav */
+.left-nav a::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-dark-muted);
+  transition: 0.3s;
+}
+.left-nav a:hover::before,
+.left-nav a.active::before {
+  width: 56px;
+  background: var(--color-text-bright);
+}
+
+/* Section label line */
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-glass-border), transparent);
+}
+
+/* Project card top glow */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.3), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Project detail arrow */
+.project-detail::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+}
+
+/* Highlight card overlay */
+.highlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.05), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+.highlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav scrolled state */
+nav.scrolled {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid var(--color-glass-border);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .cursor-glow {
+    display: none;
+  }
+}
