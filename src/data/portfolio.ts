@@ -86,7 +86,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    badge: "Leader",
     title: "ウエディング関連 WEBサイトリニューアル",
     period: "2025/4 — Present",
     desc: "既存システムの仕様把握・ドキュメント化からリプレイス設計、Next.js + NestJS + GraphQLによるフルスタック開発を担当。",
