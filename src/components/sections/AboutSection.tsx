@@ -3,7 +3,7 @@ import SectionLabel from "../SectionLabel";
 
 const highlights = [
   { num: "9+", label: "Projects" },
-  { num: "5", label: "Years Exp" },
+  { num: "4", label: "Years Exp" },
   { num: "15+", label: "Technologies" },
 ];
 
@@ -21,20 +21,24 @@ export default function AboutSection() {
             </strong>
             を中心に、直近では
             <strong className="text-text-bright font-semibold">
-              NestJS / GraphQL / LAMP環境
+              NestJS / GraphQL
             </strong>
-            のバックエンドも含めたフルスタック開発に携わっています。
+            によるバックエンドも含めたフルスタック開発に携わっています。
           </p>
         </FadeUp>
         <FadeUp>
           <p className="text-muted mb-[1.2rem] text-[0.93rem]">
             案件では
             <strong className="text-text-bright font-semibold">基本設計</strong>
-            から携わり、アーキテクチャ設計、共通コンポーネント設計、チケット管理まで幅広い工程に対応。
+            から携わり、アーキテクチャ設計、共通コンポーネント設計、チケット管理まで幅広い工程に対応。副業では
             <strong className="text-text-bright font-semibold">
-              AIコーディングツール
+              RAGシステムのフロントエンド開発
             </strong>
-            を活用した効率的な開発手法にも取り組んでいます。
+            、個人開発では
+            <strong className="text-text-bright font-semibold">
+              マルチモデルAIエージェント
+            </strong>
+            の設計・実装にも取り組んでいます。
           </p>
         </FadeUp>
       </div>

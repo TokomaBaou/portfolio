@@ -1,4 +1,5 @@
 import FadeUp from "../FadeUp";
+import { PROFILE, SOCIAL_LINKS } from "@/data/constants";
 
 export default function ContactSection() {
   return (
@@ -16,7 +17,7 @@ export default function ContactSection() {
         </FadeUp>
         <FadeUp>
           <a
-            href="mailto:your@email.com"
+            href={`mailto:${PROFILE.email}`}
             className="inline-block border border-accent text-accent px-8 py-[0.8rem] rounded-md font-mono text-[0.88rem] transition-all duration-300 hover:bg-accent/10 hover:-translate-y-0.5"
           >
             Say Hello →
@@ -24,24 +25,17 @@ export default function ContactSection() {
         </FadeUp>
         <FadeUp>
           <div className="flex gap-8 justify-center mt-6 flex-wrap">
-            <a
-              href="#"
-              className="font-mono text-[0.8rem] text-dark-muted transition-colors duration-300 hover:text-accent"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              className="font-mono text-[0.8rem] text-dark-muted transition-colors duration-300 hover:text-accent"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:your@email.com"
-              className="font-mono text-[0.8rem] text-dark-muted transition-colors duration-300 hover:text-accent"
-            >
-              your@email.com
-            </a>
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                aria-label={link.label}
+                className="font-mono text-[0.8rem] text-dark-muted transition-colors duration-300 hover:text-accent"
+              >
+                {link.external ? link.label : PROFILE.email}
+              </a>
+            ))}
           </div>
         </FadeUp>
       </div>

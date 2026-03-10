@@ -14,8 +14,8 @@
   --color-muted: #8892b0;
   --color-dark-muted: #495670;
 
-  --font-sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: var(--font-inter), var(--font-noto-sans-jp), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 /* Selection */

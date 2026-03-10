@@ -9,34 +9,35 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Languages",
     pills: [
-      { name: "JavaScript", exp: "5年", color: "cyan" },
-      { name: "TypeScript", exp: "4.5年", color: "cyan" },
-      { name: "HTML5", exp: "5年", color: "cyan" },
-      { name: "CSS3", exp: "5年", color: "cyan" },
-      { name: "PHP", color: "cyan" },
-      { name: "GAS", color: "cyan" },
+      { name: "JavaScript", exp: "4年", color: "cyan" },
+      { name: "TypeScript", exp: "4年", color: "cyan" },
+      { name: "HTML5", exp: "4年", color: "cyan" },
+      { name: "CSS3", exp: "4年", color: "cyan" },
+      { name: "Python", exp: "1年", color: "cyan" },
+      { name: "PHP", exp: "2年", color: "cyan" },
     ],
   },
   {
     title: "Frameworks",
     pills: [
-      { name: "React", exp: "4.5年", color: "purple" },
-      { name: "Next.js", exp: "2.5年", color: "purple" },
-      { name: "NestJS", exp: "1.5年", color: "purple" },
-      { name: "Material UI", exp: "2.5年", color: "purple" },
-      { name: "Tailwind CSS", exp: "1.9年", color: "purple" },
-      { name: "GraphQL", exp: "1.4年", color: "purple" },
+      { name: "React", exp: "4年", color: "purple" },
+      { name: "Next.js", exp: "3年", color: "purple" },
+      { name: "NestJS", exp: "1年", color: "purple" },
+      { name: "Nuxt.js", exp: "2年", color: "purple" },
+      { name: "Laravel", exp: "2年", color: "purple" },
+      { name: "Material UI", exp: "3年", color: "purple" },
+      { name: "Tailwind CSS", exp: "1年", color: "purple" },
+      { name: "GraphQL", exp: "1年", color: "purple" },
       { name: "Prisma", color: "purple" },
-      { name: "Sass", color: "purple" },
     ],
   },
   {
     title: "Database / BaaS",
     pills: [
-      { name: "MySQL", exp: "1.8年", color: "blue" },
+      { name: "MySQL", exp: "2年", color: "blue" },
       { name: "PostgreSQL", exp: "10ヶ月", color: "blue" },
       { name: "Supabase", exp: "10ヶ月", color: "blue" },
-      { name: "Firebase", exp: "1.5年", color: "blue" },
+      { name: "Firebase", exp: "2年", color: "blue" },
       { name: "DynamoDB", color: "blue" },
       { name: "MariaDB", color: "blue" },
     ],
@@ -44,7 +45,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Infrastructure & Tools",
     pills: [
-      { name: "AWS (ECS, EKS, Lambda)", color: "orange" },
+      { name: "AWS (ECS, EKS)", color: "orange" },
       { name: "Vercel", color: "orange" },
       { name: "Cloud Run", color: "orange" },
       { name: "Docker", color: "orange" },
@@ -69,6 +70,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    badge: "Leader — Solo Dev",
+    title: "社内学習コミュニティ管理プラットフォーム",
+    period: "2025/5 — Present",
+    desc: "要件定義〜アーキテクチャ設計〜開発〜運用まで1人で完遂。AIコーディングツールを活用し、本業と並行して2025年10月にリリース。現在社内で運用中。",
+    details: [
+      "Next.js 15 + NestJS 11 のモノレポ構成を設計",
+      "Google Meet録画 → YouTube自動アップ → Gemini AI文字起こし・要約パイプライン",
+      "Mattermost Webhook連携による自動セッション作成",
+      "PWA対応、Jest + Playwright でテスト自動化",
+    ],
+    tech: [
+      "Next.js 15", "React 19", "NestJS 11", "Tailwind", "Prisma",
+      "Supabase", "Vercel", "Cloud Run", "Gemini API",
+    ],
+  },
+  {
     badge: "Leader",
     title: "ウエディング関連 WEBサイトリニューアル",
     period: "2025/4 — Present",
@@ -82,20 +99,17 @@ export const projects: Project[] = [
     tech: ["Next.js", "NestJS", "TypeScript", "GraphQL", "MySQL", "AWS (ECS/EKS)"],
   },
   {
-    badge: "Leader — Solo Dev",
-    title: "学習コミュニティ管理プラットフォーム",
-    period: "2025/5 — Present",
-    desc: "要件定義〜アーキテクチャ設計〜開発〜運用まで1人で完遂。AIコーディングツールを活用し、本業と並行して2025年10月にリリース。",
+    badge: "Frontend Lead",
+    title: "大手企業向け 社内RAGシステム開発（副業）",
+    period: "2025/3 — 2026/3",
+    desc: "大手企業の社内ナレッジ検索を効率化するRAG（検索拡張生成）システムのフロントエンド開発を担当。LLMとの連携UI、検索結果表示、ストリーミングレスポンス表示を実装。",
     details: [
-      "Next.js 15 + NestJS 11 のモノレポ構成を設計",
-      "Google Meet録画 → YouTube自動アップ → Gemini AI文字起こし・要約パイプライン",
-      "Mattermost Webhook連携による自動セッション作成",
-      "PWA対応、Jest + Playwright でテスト自動化",
+      "RAGチャットUIの設計・実装（ストリーミング対応）",
+      "検索ウィザード・フィルター検索モードの構築",
+      "検索履歴・ブックマーク機能の実装",
+      "レスポンシブ対応・PWA対応",
     ],
-    tech: [
-      "Next.js 15", "React 19", "NestJS 11", "Tailwind", "Prisma",
-      "Supabase", "Vercel", "Cloud Run", "Gemini API",
-    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "LLM API連携"],
   },
   {
     badge: "Leader",
@@ -117,6 +131,19 @@ export const projects: Project[] = [
     tech: ["Next.js", "React", "TypeScript", "Material UI", "PostgreSQL", "AWS", "NextAuth"],
   },
   {
+    badge: "Frontend + Backend",
+    title: "ヘルスケアアプリ開発（副業）",
+    period: "2023/3 — 2025/5",
+    desc: "ヘルスケア関連Webアプリケーションのフロントエンド開発を中心に、バックエンドAPI開発も担当。複数サービス（本体・FC向け・アシスタント機能）を並行開発。",
+    details: [
+      "Nuxt.js + TypeScript によるフロントエンド開発",
+      "Laravel によるバックエンドAPI開発・保守",
+      "Firebase連携（認証・データベース）",
+      "Docker環境でのローカル開発・テスト",
+    ],
+    tech: ["Nuxt.js", "TypeScript", "Laravel", "PHP", "Firebase", "Docker", "MySQL"],
+  },
+  {
     title: "マーケティングプラットフォーム開発",
     period: "2022/9 — 2023/7",
     desc: "基本設計・詳細設計から、管理者・利用者向け画面のCRUD機能まで一貫して開発。",
@@ -134,18 +161,6 @@ export const projects: Project[] = [
     desc: "画面UI実装（8画面）、モックAPI作成、結合テスト・シナリオテストのドキュメント作成。",
     tech: ["React", "TypeScript", "Material UI", "AWS"],
   },
-  {
-    title: "電子コミックス配信サービス",
-    period: "2021/8 — 2022/1",
-    desc: "ログ出力処理の全体実装、フリーワード検索、ユーザー別詳細画面のUUID検索・更新機能を開発。",
-    tech: ["React", "TypeScript", "Material UI", "AWS"],
-  },
-  {
-    title: "ECサイト WebアプリケーションUI実装",
-    period: "2021/2 — 2021/7",
-    desc: "画面遷移図・画面定義書の作成、管理者画面（受注一覧管理・顧客一覧）のモック画面作成。",
-    tech: ["JavaScript", "HTML5", "CSS3", "jQuery", "MySQL"],
-  },
 ];
 
 export interface PersonalProject {
@@ -153,19 +168,33 @@ export interface PersonalProject {
   title: string;
   desc: string;
   pills: { name: string; color: PillColor }[];
+  link?: string;
 }
 
 export const personalProjects: PersonalProject[] = [
   {
-    emoji: "🎓",
-    title: "学習コミュニティプラットフォーム",
-    desc: "AIコーディングツール活用で、本業と並行して設計〜リリースまで完遂。Next.js 15 + NestJS 11のモノレポ構成、Google Meet録画自動処理パイプライン、PWA対応など先進的な機能を実装。",
+    emoji: "🤖",
+    title: "マルチモデル音声AIエージェント開発",
+    desc: "複数のLLM（Gemini / Claude）を統合した音声操作AIアシスタントを個人開発。音声でSlack・Notion・GitHubを操作可能。ウェイクワード検出、話者認証、リアルタイム音声処理、MCP連携によるツール統合を実装。",
     pills: [
-      { name: "Next.js 15", color: "purple" },
-      { name: "NestJS 11", color: "purple" },
-      { name: "Supabase", color: "blue" },
-      { name: "Gemini API", color: "cyan" },
+      { name: "Python", color: "cyan" },
+      { name: "Gemini API", color: "purple" },
+      { name: "Claude API", color: "purple" },
+      { name: "MCP", color: "orange" },
+      { name: "ChromaDB", color: "blue" },
     ],
+  },
+  {
+    emoji: "🔥",
+    title: "テックトレンド自動収集・ラジオ配信",
+    desc: "はてなブックマーク、Hacker News、Reddit、MCP Registryからテックトレンドを毎日自動収集。Gemini APIでラジオ原稿を生成し、Edge TTSで音声配信も実装。GitHub Actions で完全自動運用中。",
+    pills: [
+      { name: "Python", color: "cyan" },
+      { name: "Gemini API", color: "purple" },
+      { name: "GitHub Actions", color: "orange" },
+      { name: "Vercel", color: "orange" },
+    ],
+    link: "https://neta-trend-daily-github.vercel.app/",
   },
   {
     emoji: "📱",
@@ -174,16 +203,6 @@ export const personalProjects: PersonalProject[] = [
     pills: [
       { name: "Swift", color: "cyan" },
       { name: "Xcode", color: "cyan" },
-    ],
-  },
-  {
-    emoji: "🤖",
-    title: "AI活用開発",
-    desc: "AIコーディングツールを活用した効率的な開発手法を研究・実践。実務でもAIツールを積極的に導入し、開発スピードと品質を向上させています。",
-    pills: [
-      { name: "AIコーディング", color: "orange" },
-      { name: "Gemini API", color: "orange" },
-      { name: "LLM活用", color: "orange" },
     ],
   },
 ];

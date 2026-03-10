@@ -15,11 +15,21 @@ export default function PersonalSection() {
               {p.emoji} {p.title}
             </h4>
             <p className="text-muted text-[0.85rem] mb-[0.8rem]">{p.desc}</p>
-            <div className="flex flex-wrap gap-[0.4rem]">
+            <div className="flex flex-wrap gap-[0.4rem] mb-3">
               {p.pills.map((pill) => (
                 <Pill key={pill.name} name={pill.name} color={pill.color} />
               ))}
             </div>
+            {p.link && (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-mono text-[0.78rem] text-accent transition-colors duration-300 hover:text-text-bright"
+              >
+                View Project →
+              </a>
+            )}
           </div>
         </FadeUp>
       ))}

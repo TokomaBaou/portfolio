@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-const navItems = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "personal", label: "Personal" },
-  { id: "contact", label: "Contact" },
-];
+import { NAV_ITEMS, SITE, PROFILE, SOCIAL_LINKS } from "@/data/constants";
 
 export default function LeftColumn() {
   const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -41,7 +34,7 @@ export default function LeftColumn() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             navLinksRef.current.forEach((l) => l?.classList.remove("active"));
-            const idx = navItems.findIndex(
+            const idx = NAV_ITEMS.findIndex(
               (n) => n.id === entry.target.id
             );
             if (idx >= 0) navLinksRef.current[idx]?.classList.add("active");
@@ -58,18 +51,17 @@ export default function LeftColumn() {
     <div ref={containerRef} className="sticky top-0 h-screen flex flex-col justify-between py-24 pb-16 max-md:relative max-md:h-auto max-md:py-24 max-md:pb-8 max-md:min-h-0">
       <div>
         <h1 className="text-[clamp(2.4rem,4vw,3.2rem)] font-extrabold text-text-bright tracking-[-1.5px] leading-[1.1] mb-2 fade-up">
-          M.O
+          {SITE.name}
         </h1>
         <p className="text-[clamp(1rem,2vw,1.3rem)] font-medium text-muted mb-[1.2rem] tracking-[-0.3px] fade-up stagger-1">
-          Fullstack Engineer —{" "}
-          <span className="text-accent">Next.js / React</span>
+          {PROFILE.role} —{" "}
+          <span className="text-accent">{PROFILE.tagline}</span>
         </p>
         <p className="text-dark-muted text-[0.92rem] max-w-[380px] leading-[1.7] mb-8 fade-up stagger-2">
-          フロントエンドからバックエンド、インフラまで。toB /
-          toC問わず基本設計から保守運用まで対応するフルスタックエンジニアです。AI活用開発にも精通しています。
+          {PROFILE.bio}
         </p>
         <ul className="left-nav list-none mb-10 fade-up stagger-3 max-md:hidden">
-          {navItems.map((item, i) => (
+          {NAV_ITEMS.map((item, i) => (
             <li key={item.id} className="mb-[0.2rem]">
               <a
                 ref={(el) => { navLinksRef.current[i] = el; }}
@@ -84,26 +76,19 @@ export default function LeftColumn() {
         </ul>
       </div>
       <div className="flex gap-[1.2rem] items-center fade-up stagger-4">
-        <a
-          href="#"
-          className="text-dark-muted text-[0.85rem] font-mono transition-all duration-300 hover:text-accent hover:-translate-y-0.5"
-        >
-          GitHub
-        </a>
-        <span className="text-dark-muted">·</span>
-        <a
-          href="#"
-          className="text-dark-muted text-[0.85rem] font-mono transition-all duration-300 hover:text-accent hover:-translate-y-0.5"
-        >
-          LinkedIn
-        </a>
-        <span className="text-dark-muted">·</span>
-        <a
-          href="mailto:your@email.com"
-          className="text-dark-muted text-[0.85rem] font-mono transition-all duration-300 hover:text-accent hover:-translate-y-0.5"
-        >
-          Email
-        </a>
+        {SOCIAL_LINKS.map((link, i) => (
+          <span key={link.label} className="contents">
+            {i > 0 && <span className="text-dark-muted">·</span>}
+            <a
+              href={link.href}
+              {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+              aria-label={link.label}
+              className="text-dark-muted text-[0.85rem] font-mono transition-all duration-300 hover:text-accent hover:-translate-y-0.5"
+            >
+              {link.label}
+            </a>
+          </span>
+        ))}
       </div>
     </div>
   );
